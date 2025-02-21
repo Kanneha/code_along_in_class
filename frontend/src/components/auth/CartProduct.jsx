@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { IoIosAdd } from "react-icons/io";
 import { IoIosRemove } from "react-icons/io";
+import PropTypes from "prop-types";
 
 export default function CartProduct({ _id, name, images, quantity, price }) {
 	const [currentIndex, setCurrentIndex] = useState(0);
@@ -33,7 +34,7 @@ export default function CartProduct({ _id, name, images, quantity, price }) {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify({
-                email: 'gowrishvarma@gmail.com',
+                email: 'yash@gmail.com',
                 productId: _id,
                 quantity,
             }),
@@ -104,3 +105,15 @@ export default function CartProduct({ _id, name, images, quantity, price }) {
 		</div>
 	);
 }
+
+
+CartProduct.propTypes = {
+	_id: PropTypes.string.isRequired,
+	name: PropTypes.string.isRequired,
+	images: PropTypes.arrayOf(PropTypes.string).isRequired,
+	description: PropTypes.string.isRequired,
+	price: PropTypes.number.isRequired,
+	quantity: PropTypes.number.isRequired
+  };
+  
+  
