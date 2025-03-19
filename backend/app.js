@@ -15,7 +15,7 @@ app.use(cookieParser());
 
 // Configure CORS to allow requests from React frontend
 app.use(cors({
-  origin: 'http://localhost:5173', // Update this if your frontend is hosted elsewhere
+  origin: 'http://localhost:5174', // Update this if your frontend is hosted elsewhere
   credentials: true, // Enable if you need to send cookies or authentication headers
 }));
 
@@ -29,7 +29,6 @@ app.use('/products', express.static(path.join(__dirname, 'products')));
 const userRoutes = require("./controller/user");
 const productRoutes = require('./controller/product');
 const orders = require('./controller/orders');
-
 
 // Route Handling
 app.use("/api/v2/user", userRoutes);
